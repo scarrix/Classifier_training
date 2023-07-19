@@ -9,23 +9,23 @@ Compiliamo il sorgente tramite il comando
 g++ createpos.cpp -o createpos -lws2_32
 ```
 otterremo nella stessa cartella createpos.exe. Eseguiamo da terminale, nella radice del progetto, il comando 
-
 ```
 createpos path\to\pos_top
 ```
-
 per creare il file positive.txt. Settando appropriatamente OpenCV e le variabili d’ambiente, sarà possibile utilizzare l’applicazione opencv_createsamples per produrre un set di dati di campioni positivi in formato .vec, supportato dall’applicazione di training opencv_traincascade. 
 L'output ottenuto da terminale, dall’esecuzione del comando 
-
 ```
 opencv_createsamples -info positives.txt -w 24 -h 24 -vec pos.vec -num 760
 ```
-
 è il file pos.vec. 
 I parametri -w e -h sono le dimensioni del bounding box per il cropping delle immagini positive, -vec è il nome del file vettoriale creato e -num indica il numero di immagini positive usate.
 
 # Gestione dei negativi
-Infine si crea un file txt di listing anche per le immagini negative eseguendo da terminale il comando "dir /b/s .\neg_top\*.jpg > negatives.txt" nella radice del progetto, e si passa alla fase di training del classificatore.
+Infine si crea un file txt di listing anche per le immagini negative eseguendo da terminale il comando 
+```
+dir /b/s .\neg_top\*.jpg > negatives.txt
+```
+nella radice del progetto, e si passa alla fase di training del classificatore.
 
 #Addestramento
 L'addestramento del classificatore viene eseguito tramite il comando 
