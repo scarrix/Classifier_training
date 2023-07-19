@@ -1,7 +1,7 @@
 # Classifier_training
 Il repository GitHub in questione addestra un calcolatore a cascata che, tramite un dataset di immagini, permette di effettuare il detection dei piedi di robot NAO.
 
-# Gestione dei positivi
+## Gestione dei positivi
 All’interno di pos_top e neg_top mettiamo, rispettivamente, le immagini positive e negative.
 Il sorgente createpos.cpp invece verrà usato per generare un file di listing delle immagini positive, denominato positive.txt, in un formato adatto a OpenCV. 
 Compiliamo il sorgente tramite il comando 
@@ -20,14 +20,14 @@ opencv_createsamples -info positives.txt -w 24 -h 24 -vec pos.vec -num 760
 è il file pos.vec. 
 I parametri -w e -h sono le dimensioni del bounding box per il cropping delle immagini positive, -vec è il nome del file vettoriale creato e -num indica il numero di immagini positive usate.
 
-# Gestione dei negativi
+## Gestione dei negativi
 Infine si crea un file txt di listing anche per le immagini negative eseguendo da terminale il comando 
 ```
 dir /b/s .\neg_top\*.jpg > negatives.txt
 ```
 nella radice del progetto, e si passa alla fase di training del classificatore.
 
-# Addestramento
+## Addestramento
 L'addestramento del classificatore viene eseguito tramite il comando 
 
 ```
