@@ -27,7 +27,7 @@ dir /b/s .\neg_top\*.jpg > negatives.txt
 ```
 nella radice del progetto, e si passa alla fase di training del classificatore.
 
-#Addestramento
+# Addestramento
 L'addestramento del classificatore viene eseguito tramite il comando 
 
 ```
